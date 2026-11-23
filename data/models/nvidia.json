@@ -1,0 +1,80 @@
+[
+  {
+    "name": "Llama 3.3 Nemotron Super 49B v1.5",
+    "slug": "llama-3-3-nemotron-super-49b-v1-5",
+    "family": "Nemotron",
+    "type": "text",
+    "released": "2025-07-25",
+    "context": 131072,
+    "maxOutput": 32768,
+    "params": 49,
+    "openWeights": true,
+    "license": "NVIDIA Open Model License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Llama 3.3 70B pruned to 49B and post-trained for reasoning; fits on a single H100.",
+    "offerings": [
+      {
+        "provider": "nvidia-nim",
+        "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+        "input": 0,
+        "output": 0
+      },
+      {
+        "provider": "deepinfra",
+        "id": "nvidia/Llama-3.3-Nemotron-Super-49B-v1.5",
+        "input": 0.1,
+        "output": 0.4
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 79.0,
+      "gpqa-diamond": 71.6,
+      "aime-2025": 82.7,
+      "math-500": 97.4,
+      "livecodebench": 73.6
+    }
+  },
+  {
+    "name": "Nemotron Nano 9B v2",
+    "family": "Nemotron",
+    "type": "text",
+    "released": "2025-08-18",
+    "context": 131072,
+    "maxOutput": 32768,
+    "params": 9,
+    "openWeights": true,
+    "license": "NVIDIA Open Model License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Hybrid Mamba-Transformer small model with a configurable thinking budget.",
+    "offerings": [
+      {
+        "provider": "nvidia-nim",
+        "id": "nvidia/nvidia-nemotron-nano-9b-v2",
+        "input": 0,
+        "output": 0
+      },
+      {
+        "provider": "deepinfra",
+        "id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
+        "input": 0.04,
+        "output": 0.16
+      },
+      {
+        "provider": "openrouter",
+        "id": "nvidia/nemotron-nano-9b-v2",
+        "pricePerToken": { "input": "0.00000004", "output": "0.00000016" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 70.0,
+      "gpqa-diamond": 64.0,
+      "aime-2025": 72.1,
+      "math-500": 97.8,
+      "livecodebench": 71.1
+    }
+  }
+]

@@ -1,0 +1,242 @@
+// OneAtlas database schema. Design and reasoning: docs/ARCHITECTURE.md §5.
+// Connection settings live in prisma.config.ts (Prisma 7).
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─────────────────────────── Enums ───────────────────────────
+
+enum LabKind {
+  COMPANY
+  RESEARCH_INSTITUTE
+  OPEN_COMMUNITY
+}
+
+enum ProviderKind {
+  FIRST_PARTY // a lab's own API: OpenAI API, Anthropic API
+  CLOUD // hyperscalers: AWS Bedrock, Google Vertex AI, Azure
+  INFERENCE_PLATFORM // specialist hosts: Groq, Together, Fireworks
+  AGGREGATOR // routers in front of many providers: OpenRouter
+}
+
+enum ModelType {
+  TEXT
+  EMBEDDING
+  IMAGE
+  VIDEO
+  SPEECH // text-to-speech
+  TRANSCRIPTION // speech-to-text
+  RERANKING
+}
+
+enum ModelStatus {
+  ACTIVE
+  PREVIEW
+  DEPRECATED
+}
+
+enum Modality {
+  TEXT
+  IMAGE
+  AUDIO
+  VIDEO
+  FILE
+}
+
+enum Capability {
+  TOOL_CALLING
+  STRUCTURED_OUTPUT
+  REASONING
+  PROMPT_CACHING
+  FINE_TUNING
+  WEB_SEARCH
+}
+
+enum PricingUnit {
+  PER_MILLION_TOKENS
+  PER_IMAGE
+  PER_MINUTE
+  PER_MILLION_CHARACTERS
+  PER_THOUSAND_SEARCHES
+}
+
+enum BenchmarkCategory {
+  REASONING
+  KNOWLEDGE
+  CODING
+  MATH
+  AGENTIC
+  MULTIMODAL
+  LONG_CONTEXT
+  HUMAN_PREFERENCE
+}
+
+enum ScoreUnit {
+  PERCENT // 0–100
+  ELO // arena-style ratings
+  POINTS // any other scale, bounded by minScore/maxScore
+}
+
+enum IngestionStatus {
+  SUCCEEDED
+  FAILED
+}
+
+// ─────────────────────────── Tables ───────────────────────────
+
+model Lab {
+  id           String     @id @default(cuid())
+  slug         String     @unique
+  name         String
+  kind         LabKind    @default(COMPANY)
+  description  String?
+  website      String?
+  headquarters String? // country
+  foundedYear  Int?
+  logoUrl      String?
+  models       Model[]
+  providers    Provider[] // first-party APIs run by this lab
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model Provider {
+  id          String          @id @default(cuid())
+  slug        String          @unique
+  name        String
+  kind        ProviderKind
+  description String?
+  website     String?
+  docsUrl     String?
+  logoUrl     String?
+  labId       String? // set only for a lab's own API
+  lab         Lab?            @relation(fields: [labId], references: [id], onDelete: SetNull)
+  offerings   ModelOffering[]
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([kind])
+  @@index([labId])
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model Model {
+  id               String       @id @default(cuid())
+  slug             String // unique within its lab; public id is "lab/slug"
+  name             String
+  family           String? // e.g. "Claude 4", "Llama 4"; groups releases on lab pages
+  labId            String
+  lab              Lab          @relation(fields: [labId], references: [id], onDelete: Restrict)
+  type             ModelType
+  status           ModelStatus  @default(ACTIVE)
+  description      String?
+  releaseDate      DateTime?    @db.Date
+  knowledgeCutoff  DateTime?    @db.Date
+  contextWindow    Int? // tokens
+  maxOutputTokens  Int? // tokens
+  parametersB      Float? // billions; usually only published for open weights
+  openWeights      Boolean      @default(false)
+  license          String?
+  inputModalities  Modality[]   @default([])
+  outputModalities Modality[]   @default([])
+  capabilities     Capability[] @default([])
+
+  // Derived from ModelOffering. Written only by the ingestion pipeline (docs D9, D10).
+  pricingUnit    PricingUnit?
+  minInputPrice  Decimal?     @db.Decimal(10, 4)
+  minOutputPrice Decimal?     @db.Decimal(10, 4)
+  blendedPrice   Decimal?     @db.Decimal(10, 4) // cheapest (3 × input + output) / 4
+  providerCount  Int          @default(0)
+
+  offerings ModelOffering[]
+  scores    BenchmarkScore[]
+  createdAt DateTime         @default(now())
+  updatedAt DateTime         @updatedAt
+
+  @@unique([labId, slug])
+  @@index([type, status])
+  @@index([releaseDate(sort: Desc)])
+  @@index([contextWindow])
+  @@index([blendedPrice])
+  @@index([providerCount])
+  @@index([capabilities], type: Gin)
+  @@index([inputModalities], type: Gin)
+  @@index([name(ops: raw("gin_trgm_ops"))], type: Gin)
+}
+
+model ModelOffering {
+  id               String      @id @default(cuid())
+  modelId          String
+  model            Model       @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  providerId       String
+  provider         Provider    @relation(fields: [providerId], references: [id], onDelete: Cascade)
+  providerModelId  String // the id you send to this provider's API
+  pricingUnit      PricingUnit @default(PER_MILLION_TOKENS)
+  inputPrice       Decimal     @db.Decimal(10, 4) // USD per unit; 0 means free
+  outputPrice      Decimal?    @db.Decimal(10, 4) // null when there are no output tokens (embeddings)
+  cachedInputPrice Decimal?    @db.Decimal(10, 4)
+  contextWindow    Int? // null = model default; some hosts cap it lower
+  maxOutputTokens  Int?
+  quantization     String? // e.g. "fp8" on open-weights hosts
+  throughputTps    Float? // median output tokens per second
+  latencyMs        Int? // median time to first token
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@unique([modelId, providerId])
+  @@index([providerId])
+}
+
+model Benchmark {
+  id             String            @id @default(cuid())
+  slug           String            @unique
+  name           String
+  category       BenchmarkCategory
+  description    String?
+  unit           ScoreUnit         @default(PERCENT)
+  higherIsBetter Boolean           @default(true)
+  minScore       Float? // scale bounds used for normalization
+  maxScore       Float?
+  sourceUrl      String?
+  scores         BenchmarkScore[]
+  createdAt      DateTime          @default(now())
+  updatedAt      DateTime          @updatedAt
+
+  @@index([category])
+}
+
+model BenchmarkScore {
+  id          String    @id @default(cuid())
+  modelId     String
+  model       Model     @relation(fields: [modelId], references: [id], onDelete: Cascade)
+  benchmarkId String
+  benchmark   Benchmark @relation(fields: [benchmarkId], references: [id], onDelete: Cascade)
+  score       Float
+  measuredAt  DateTime? @db.Date
+  sourceUrl   String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@unique([modelId, benchmarkId])
+  @@index([benchmarkId, score(sort: Desc)])
+}
+
+model IngestionRun {
+  id         String          @id @default(cuid())
+  source     String // e.g. "curated@2026-11-22"
+  status     IngestionStatus
+  startedAt  DateTime        @default(now())
+  finishedAt DateTime?
+  stats      Json? // inserted / updated / deleted counts per table
+  error      String?
+
+  @@index([status, finishedAt(sort: Desc)])
+}

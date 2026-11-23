@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "mmlu-pro",
+    "name": "MMLU-Pro",
+    "category": "knowledge",
+    "unit": "percent",
+    "description": "12,000 multiple-choice questions across 14 academic subjects, with ten answer options to make guessing harder than the original MMLU.",
+    "sourceUrl": "https://github.com/TIGER-AI-Lab/MMLU-Pro"
+  },
+  {
+    "slug": "gpqa-diamond",
+    "name": "GPQA Diamond",
+    "category": "reasoning",
+    "unit": "percent",
+    "description": "198 graduate-level biology, physics and chemistry questions written to be hard to look up, even for skilled non-experts with web access.",
+    "sourceUrl": "https://arxiv.org/abs/2311.12022"
+  },
+  {
+    "slug": "hle",
+    "name": "Humanity's Last Exam",
+    "category": "reasoning",
+    "unit": "percent",
+    "description": "Expert-written questions at the frontier of human knowledge across dozens of subjects. Scores here are without tools.",
+    "sourceUrl": "https://lastexam.ai"
+  },
+  {
+    "slug": "aime-2025",
+    "name": "AIME 2025",
+    "category": "math",
+    "unit": "percent",
+    "description": "The 30 problems of the 2025 American Invitational Mathematics Examination; answers are integers, so there is no partial credit.",
+    "sourceUrl": "https://artofproblemsolving.com/wiki/index.php/AIME_Problems_and_Solutions"
+  },
+  {
+    "slug": "math-500",
+    "name": "MATH-500",
+    "category": "math",
+    "unit": "percent",
+    "description": "A 500-problem subset of the MATH competition dataset, spanning algebra to number theory.",
+    "sourceUrl": "https://huggingface.co/datasets/HuggingFaceH4/MATH-500"
+  },
+  {
+    "slug": "swe-bench-verified",
+    "name": "SWE-bench Verified",
+    "category": "coding",
+    "unit": "percent",
+    "description": "500 real GitHub issues from popular Python repositories, human-verified as solvable; the model must produce a patch that passes the tests.",
+    "sourceUrl": "https://www.swebench.com"
+  },
+  {
+    "slug": "livecodebench",
+    "name": "LiveCodeBench",
+    "category": "coding",
+    "unit": "percent",
+    "description": "Competitive-programming problems collected continuously after model training cutoffs, to limit contamination.",
+    "sourceUrl": "https://livecodebench.github.io"
+  },
+  {
+    "slug": "terminal-bench",
+    "name": "Terminal-Bench",
+    "category": "agentic",
+    "unit": "percent",
+    "description": "End-to-end tasks an agent completes in a real terminal: building software, configuring systems, analyzing data.",
+    "sourceUrl": "https://www.tbench.ai"
+  },
+  {
+    "slug": "tau2-bench-retail",
+    "name": "τ²-bench (Retail)",
+    "category": "agentic",
+    "unit": "percent",
+    "description": "Simulated customer-service conversations where the agent must follow policy while using tools to resolve requests.",
+    "sourceUrl": "https://github.com/sierra-research/tau2-bench"
+  },
+  {
+    "slug": "mmmu",
+    "name": "MMMU",
+    "category": "multimodal",
+    "unit": "percent",
+    "description": "College-level questions that require understanding images such as charts, diagrams and photos across 30 subjects.",
+    "sourceUrl": "https://mmmu-benchmark.github.io"
+  },
+  {
+    "slug": "mrcr-128k",
+    "name": "MRCR (128K)",
+    "category": "long_context",
+    "unit": "percent",
+    "description": "Multi-round co-reference resolution: find and reproduce specific earlier turns hidden in a ~128K-token conversation.",
+    "sourceUrl": "https://huggingface.co/datasets/openai/mrcr"
+  },
+  {
+    "slug": "lmarena-text",
+    "name": "LMArena Text",
+    "category": "human_preference",
+    "unit": "elo",
+    "description": "Elo rating from crowdsourced, blind, head-to-head votes on which response people prefer.",
+    "sourceUrl": "https://lmarena.ai"
+  }
+]

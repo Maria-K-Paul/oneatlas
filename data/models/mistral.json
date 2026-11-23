@@ -1,0 +1,180 @@
+[
+  {
+    "name": "Mistral Medium 3",
+    "family": "Mistral Medium",
+    "type": "text",
+    "released": "2025-05-07",
+    "context": "128K",
+    "maxOutput": 32768,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Frontier-class multimodal model priced for enterprise deployment.",
+    "offerings": [
+      {
+        "provider": "mistral-api",
+        "id": "mistral-medium-2505",
+        "input": 0.4,
+        "output": 2,
+        "tps": 90
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "mistral.mistral-medium-3-v1:0",
+        "pricePer1K": { "input": 0.0004, "output": 0.002 }
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "mistral-medium-2505",
+        "pricePer1K": { "input": 0.0004, "output": 0.002 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "mistralai/mistral-medium-3",
+        "pricePerToken": { "input": "0.0000004", "output": "0.000002" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 77.2,
+      "gpqa-diamond": 57.1,
+      "math-500": 91.0,
+      "livecodebench": 30.3,
+      "mmmu": 66.1,
+      "lmarena-text": 1380
+    }
+  },
+  {
+    "name": "Mistral Large 2.1",
+    "family": "Mistral Large",
+    "type": "text",
+    "released": "2024-11-18",
+    "context": "128K",
+    "maxOutput": 32768,
+    "params": 123,
+    "openWeights": true,
+    "license": "Mistral Research License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Mistral's large dense model. Weights are open for research; commercial use needs a licence.",
+    "offerings": [
+      { "provider": "mistral-api", "id": "mistral-large-2411", "input": 2, "output": 6 },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "mistral-large-2411",
+        "pricePer1K": { "input": 0.002, "output": 0.006 }
+      },
+      { "provider": "google-vertex", "id": "mistral-large-2411", "input": 2, "output": 6 }
+    ],
+    "scores": {
+      "mmlu-pro": 69.4,
+      "gpqa-diamond": 48.6,
+      "math-500": 73.6,
+      "livecodebench": 29.0,
+      "lmarena-text": 1335
+    }
+  },
+  {
+    "name": "Mistral Small 3.2",
+    "family": "Mistral Small",
+    "type": "text",
+    "released": "2025-06-20",
+    "context": "128K",
+    "maxOutput": 32768,
+    "params": 24,
+    "openWeights": true,
+    "license": "Apache 2.0",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "A 24B open model that fits on a single consumer GPU, with vision and function calling.",
+    "offerings": [
+      {
+        "provider": "mistral-api",
+        "id": "mistral-small-2506",
+        "input": 0.1,
+        "output": 0.3,
+        "tps": 150
+      },
+      {
+        "provider": "deepinfra",
+        "id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "input": 0.05,
+        "output": 0.1
+      },
+      {
+        "provider": "together",
+        "id": "mistralai/Mistral-Small-24B-Instruct-2501",
+        "input": 0.8,
+        "output": 0.8
+      },
+      {
+        "provider": "openrouter",
+        "id": "mistralai/mistral-small-3.2-24b-instruct",
+        "pricePerToken": { "input": "0.00000005", "output": "0.0000001" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 69.1,
+      "gpqa-diamond": 46.1,
+      "math-500": 69.4,
+      "livecodebench": 22.0,
+      "mmmu": 62.5
+    }
+  },
+  {
+    "name": "Magistral Medium",
+    "family": "Magistral",
+    "type": "text",
+    "released": "2025-06-10",
+    "context": 40000,
+    "maxOutput": 40000,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Mistral's reasoning model, with traceable chains of thought in many languages.",
+    "offerings": [
+      { "provider": "mistral-api", "id": "magistral-medium-2506", "input": 2, "output": 5 }
+    ],
+    "scores": { "mmlu-pro": 75.0, "gpqa-diamond": 70.8, "aime-2025": 64.9, "livecodebench": 59.4 }
+  },
+  {
+    "name": "Codestral",
+    "family": "Codestral",
+    "type": "text",
+    "released": "2025-01-13",
+    "context": 256000,
+    "maxOutput": 32768,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Coding model built for fill-in-the-middle completion across 80+ languages.",
+    "offerings": [
+      {
+        "provider": "mistral-api",
+        "id": "codestral-2501",
+        "input": 0.3,
+        "output": 0.9,
+        "tps": 180
+      },
+      { "provider": "google-vertex", "id": "codestral-2501", "input": 0.3, "output": 0.9 }
+    ],
+    "scores": { "livecodebench": 37.9, "mmlu-pro": 56.0 }
+  },
+  {
+    "name": "Mistral Embed",
+    "family": "Mistral Embed",
+    "type": "embedding",
+    "released": "2023-12-11",
+    "context": 8192,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "General-purpose 1,024-dimension text embedding model.",
+    "offerings": [{ "provider": "mistral-api", "id": "mistral-embed", "input": 0.1 }]
+  }
+]

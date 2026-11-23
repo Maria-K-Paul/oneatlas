@@ -1,0 +1,78 @@
+[
+  {
+    "name": "FLUX1.1 [pro]",
+    "slug": "flux-1-1-pro",
+    "family": "FLUX",
+    "type": "image",
+    "released": "2024-10-02",
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["image"],
+    "capabilities": [],
+    "description": "Fast, high-quality text-to-image generation with strong prompt adherence.",
+    "offerings": [
+      { "provider": "bfl-api", "id": "flux-pro-1.1", "unit": "image", "price": 0.04 },
+      {
+        "provider": "replicate",
+        "id": "black-forest-labs/flux-1.1-pro",
+        "unit": "image",
+        "price": 0.04
+      },
+      {
+        "provider": "together",
+        "id": "black-forest-labs/FLUX.1.1-pro",
+        "unit": "image",
+        "price": 0.04
+      }
+    ]
+  },
+  {
+    "name": "FLUX.1 Kontext [pro]",
+    "slug": "flux-1-kontext-pro",
+    "family": "FLUX",
+    "type": "image",
+    "released": "2025-05-29",
+    "license": "Proprietary",
+    "input": ["text", "image"],
+    "output": ["image"],
+    "capabilities": [],
+    "description": "In-context image generation and editing from text and reference images.",
+    "offerings": [
+      { "provider": "bfl-api", "id": "flux-kontext-pro", "unit": "image", "price": 0.04 },
+      {
+        "provider": "replicate",
+        "id": "black-forest-labs/flux-kontext-pro",
+        "unit": "image",
+        "price": 0.04
+      }
+    ]
+  },
+  {
+    "name": "FLUX.1 [schnell]",
+    "slug": "flux-1-schnell",
+    "family": "FLUX",
+    "type": "image",
+    "released": "2024-08-01",
+    "params": 12,
+    "openWeights": true,
+    "license": "Apache 2.0",
+    "input": ["text"],
+    "output": ["image"],
+    "capabilities": [],
+    "description": "Open-weights FLUX distilled to generate an image in 1–4 steps.",
+    "offerings": [
+      {
+        "provider": "replicate",
+        "id": "black-forest-labs/flux-schnell",
+        "unit": "image",
+        "price": 0.003
+      },
+      {
+        "provider": "together",
+        "id": "black-forest-labs/FLUX.1-schnell",
+        "unit": "image",
+        "price": 0.0027
+      }
+    ]
+  }
+]

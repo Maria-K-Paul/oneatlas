@@ -1,0 +1,201 @@
+[
+  {
+    "slug": "openai-api",
+    "name": "OpenAI API",
+    "kind": "first_party",
+    "lab": "openai",
+    "website": "https://platform.openai.com",
+    "docsUrl": "https://platform.openai.com/docs",
+    "description": "OpenAI's own platform for its models."
+  },
+  {
+    "slug": "anthropic-api",
+    "name": "Anthropic API",
+    "kind": "first_party",
+    "lab": "anthropic",
+    "website": "https://www.anthropic.com/api",
+    "docsUrl": "https://docs.anthropic.com",
+    "description": "Anthropic's own API for Claude."
+  },
+  {
+    "slug": "google-ai-studio",
+    "name": "Google AI Studio",
+    "kind": "first_party",
+    "lab": "google",
+    "website": "https://aistudio.google.com",
+    "docsUrl": "https://ai.google.dev/gemini-api/docs",
+    "description": "The Gemini API for developers."
+  },
+  {
+    "slug": "google-vertex",
+    "name": "Google Vertex AI",
+    "kind": "cloud",
+    "website": "https://cloud.google.com/vertex-ai",
+    "docsUrl": "https://cloud.google.com/vertex-ai/generative-ai/docs",
+    "description": "Google Cloud's managed ML platform, serving Gemini and partner models such as Claude."
+  },
+  {
+    "slug": "aws-bedrock",
+    "name": "Amazon Bedrock",
+    "kind": "cloud",
+    "lab": "amazon",
+    "website": "https://aws.amazon.com/bedrock/",
+    "docsUrl": "https://docs.aws.amazon.com/bedrock/",
+    "description": "AWS's managed service for foundation models from Amazon and partners."
+  },
+  {
+    "slug": "azure-ai-foundry",
+    "name": "Azure AI Foundry",
+    "kind": "cloud",
+    "lab": "microsoft",
+    "website": "https://ai.azure.com",
+    "docsUrl": "https://learn.microsoft.com/azure/ai-foundry/",
+    "description": "Microsoft Azure's platform for OpenAI, Phi and partner models."
+  },
+  {
+    "slug": "mistral-api",
+    "name": "Mistral AI Platform",
+    "kind": "first_party",
+    "lab": "mistral",
+    "website": "https://console.mistral.ai",
+    "docsUrl": "https://docs.mistral.ai",
+    "description": "Mistral's own API (La Plateforme)."
+  },
+  {
+    "slug": "deepseek-api",
+    "name": "DeepSeek API",
+    "kind": "first_party",
+    "lab": "deepseek",
+    "website": "https://platform.deepseek.com",
+    "docsUrl": "https://api-docs.deepseek.com",
+    "description": "DeepSeek's own API."
+  },
+  {
+    "slug": "xai-api",
+    "name": "xAI API",
+    "kind": "first_party",
+    "lab": "xai",
+    "website": "https://x.ai/api",
+    "docsUrl": "https://docs.x.ai",
+    "description": "xAI's own API for Grok."
+  },
+  {
+    "slug": "cohere-api",
+    "name": "Cohere API",
+    "kind": "first_party",
+    "lab": "cohere",
+    "website": "https://cohere.com",
+    "docsUrl": "https://docs.cohere.com",
+    "description": "Cohere's own API."
+  },
+  {
+    "slug": "alibaba-model-studio",
+    "name": "Alibaba Cloud Model Studio",
+    "kind": "first_party",
+    "lab": "alibaba",
+    "website": "https://www.alibabacloud.com/product/modelstudio",
+    "docsUrl": "https://www.alibabacloud.com/help/en/model-studio/",
+    "description": "Alibaba Cloud's API for Qwen models."
+  },
+  {
+    "slug": "moonshot-api",
+    "name": "Moonshot AI Platform",
+    "kind": "first_party",
+    "lab": "moonshot",
+    "website": "https://platform.moonshot.ai",
+    "docsUrl": "https://platform.moonshot.ai/docs",
+    "description": "Moonshot's own API for Kimi."
+  },
+  {
+    "slug": "zhipu-api",
+    "name": "Z.ai API",
+    "kind": "first_party",
+    "lab": "zhipu",
+    "website": "https://z.ai",
+    "docsUrl": "https://docs.z.ai",
+    "description": "Zhipu's own API for GLM."
+  },
+  {
+    "slug": "elevenlabs-api",
+    "name": "ElevenLabs API",
+    "kind": "first_party",
+    "lab": "elevenlabs",
+    "website": "https://elevenlabs.io/api",
+    "docsUrl": "https://elevenlabs.io/docs",
+    "description": "ElevenLabs' own API for speech models."
+  },
+  {
+    "slug": "bfl-api",
+    "name": "BFL API",
+    "kind": "first_party",
+    "lab": "black-forest-labs",
+    "website": "https://bfl.ai",
+    "docsUrl": "https://docs.bfl.ai",
+    "description": "Black Forest Labs' own API for FLUX."
+  },
+  {
+    "slug": "nvidia-nim",
+    "name": "NVIDIA NIM",
+    "kind": "inference_platform",
+    "lab": "nvidia",
+    "website": "https://build.nvidia.com",
+    "docsUrl": "https://docs.nvidia.com/nim/",
+    "description": "NVIDIA's hosted and self-hostable inference microservices."
+  },
+  {
+    "slug": "groq",
+    "name": "Groq",
+    "kind": "inference_platform",
+    "website": "https://groq.com",
+    "docsUrl": "https://console.groq.com/docs",
+    "description": "Very fast inference on custom LPU chips."
+  },
+  {
+    "slug": "cerebras",
+    "name": "Cerebras",
+    "kind": "inference_platform",
+    "website": "https://www.cerebras.ai",
+    "docsUrl": "https://inference-docs.cerebras.ai",
+    "description": "Wafer-scale hardware with some of the highest output speeds available."
+  },
+  {
+    "slug": "together",
+    "name": "Together AI",
+    "kind": "inference_platform",
+    "website": "https://www.together.ai",
+    "docsUrl": "https://docs.together.ai",
+    "description": "Serverless and dedicated hosting for a large catalog of open models."
+  },
+  {
+    "slug": "fireworks",
+    "name": "Fireworks AI",
+    "kind": "inference_platform",
+    "website": "https://fireworks.ai",
+    "docsUrl": "https://docs.fireworks.ai",
+    "description": "Fast, low-cost serving for open models, with fine-tuning."
+  },
+  {
+    "slug": "deepinfra",
+    "name": "DeepInfra",
+    "kind": "inference_platform",
+    "website": "https://deepinfra.com",
+    "docsUrl": "https://deepinfra.com/docs",
+    "description": "Budget-friendly hosting for popular open models."
+  },
+  {
+    "slug": "replicate",
+    "name": "Replicate",
+    "kind": "inference_platform",
+    "website": "https://replicate.com",
+    "docsUrl": "https://replicate.com/docs",
+    "description": "Runs open and commercial models, especially image and video, behind a simple API."
+  },
+  {
+    "slug": "openrouter",
+    "name": "OpenRouter",
+    "kind": "aggregator",
+    "website": "https://openrouter.ai",
+    "docsUrl": "https://openrouter.ai/docs",
+    "description": "One API that routes to hundreds of models across many providers."
+  }
+]

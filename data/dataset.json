@@ -1,0 +1,11 @@
+{
+  "name": "curated",
+  "version": "2026-11-22",
+  "description": "Hand-curated OneAtlas sample catalog: labs, providers, models, offerings, benchmarks and scores.",
+  "disclaimer": "Illustrative data for demonstration. Based on public information about models released up to late 2025; prices, limits and benchmark scores are approximate and may not match current vendor figures.",
+  "formats": {
+    "prices": "Offerings give prices in one of four forms, all normalized to USD per unit at ingestion: `input`/`output`/`cachedInput` in USD per 1M tokens (default); `pricePer1K` in USD per 1K tokens (how AWS and Azure publish); `pricePerToken` as decimal strings in USD per token (how OpenRouter's API publishes); or `unit` + `price` for non-token pricing (image, second, minute, hour, 1k-chars, 1m-chars, 1k-searches).",
+    "tokens": "Token limits may be integers or shorthand: 128K = 128,000, 1M = 1,000,000.",
+    "dates": "YYYY-MM-DD, or YYYY-MM for month precision (stored as the first of the month)."
+  }
+}

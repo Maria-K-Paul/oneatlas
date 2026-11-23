@@ -1,0 +1,96 @@
+[
+  {
+    "name": "Kimi K2 Thinking",
+    "family": "Kimi K2",
+    "type": "text",
+    "released": "2025-11-06",
+    "context": 262144,
+    "maxOutput": 262144,
+    "params": 1000,
+    "openWeights": true,
+    "license": "Modified MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "Open-weights thinking agent that can chain hundreds of tool calls in one task.",
+    "offerings": [
+      {
+        "provider": "moonshot-api",
+        "id": "kimi-k2-thinking",
+        "input": 0.6,
+        "output": 2.5,
+        "cachedInput": 0.15
+      },
+      { "provider": "together", "id": "moonshotai/Kimi-K2-Thinking", "input": 1.2, "output": 4 },
+      {
+        "provider": "openrouter",
+        "id": "moonshotai/kimi-k2-thinking",
+        "pricePerToken": { "input": "0.0000006", "output": "0.0000025" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 84.6,
+      "gpqa-diamond": 84.5,
+      "hle": 23.9,
+      "aime-2025": 94.5,
+      "swe-bench-verified": 71.3,
+      "livecodebench": 83.1,
+      "terminal-bench": 47.1,
+      "lmarena-text": 1425
+    }
+  },
+  {
+    "name": "Kimi K2 Instruct 0905",
+    "slug": "kimi-k2-instruct-0905",
+    "family": "Kimi K2",
+    "type": "text",
+    "released": "2025-09-05",
+    "context": 262144,
+    "maxOutput": 16384,
+    "params": 1000,
+    "openWeights": true,
+    "license": "Modified MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching"],
+    "description": "Trillion-parameter mixture of experts (32B active), tuned for agentic coding.",
+    "offerings": [
+      {
+        "provider": "moonshot-api",
+        "id": "kimi-k2-0905-preview",
+        "input": 0.6,
+        "output": 2.5,
+        "cachedInput": 0.15
+      },
+      {
+        "provider": "groq",
+        "id": "moonshotai/kimi-k2-instruct-0905",
+        "input": 1,
+        "output": 3,
+        "tps": 400
+      },
+      { "provider": "together", "id": "moonshotai/Kimi-K2-Instruct-0905", "input": 1, "output": 3 },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/kimi-k2-instruct-0905",
+        "input": 0.6,
+        "output": 2.5
+      },
+      {
+        "provider": "openrouter",
+        "id": "moonshotai/kimi-k2-0905",
+        "pricePerToken": { "input": "0.0000006", "output": "0.0000025" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 81.1,
+      "gpqa-diamond": 75.1,
+      "aime-2025": 49.5,
+      "swe-bench-verified": 69.2,
+      "livecodebench": 53.7,
+      "terminal-bench": 44.5,
+      "tau2-bench-retail": 70.6,
+      "lmarena-text": 1415
+    }
+  }
+]

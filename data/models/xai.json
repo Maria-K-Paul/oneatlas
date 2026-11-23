@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Grok 4",
+    "family": "Grok 4",
+    "type": "text",
+    "released": "2025-07-09",
+    "context": 256000,
+    "maxOutput": 64000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "xAI's flagship reasoning model, with native tool use and real-time search.",
+    "offerings": [
+      {
+        "provider": "xai-api",
+        "id": "grok-4-0709",
+        "input": 3,
+        "output": 15,
+        "cachedInput": 0.75,
+        "tps": 45,
+        "ttftMs": 8000
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "grok-4",
+        "pricePer1K": { "input": 0.0055, "output": 0.0275 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "x-ai/grok-4",
+        "pricePerToken": { "input": "0.000003", "output": "0.000015" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 86.6,
+      "gpqa-diamond": 87.5,
+      "hle": 25.4,
+      "aime-2025": 91.7,
+      "swe-bench-verified": 72.0,
+      "livecodebench": 79.4,
+      "tau2-bench-retail": 76.0,
+      "mmmu": 76.5,
+      "lmarena-text": 1435
+    }
+  },
+  {
+    "name": "Grok 4 Fast",
+    "family": "Grok 4",
+    "type": "text",
+    "released": "2025-09-19",
+    "context": 2000000,
+    "maxOutput": 30000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "Cost-efficient Grok 4 with a 2M-token context and unified reasoning modes.",
+    "offerings": [
+      {
+        "provider": "xai-api",
+        "id": "grok-4-fast-reasoning",
+        "input": 0.2,
+        "output": 0.5,
+        "cachedInput": 0.05,
+        "tps": 170,
+        "ttftMs": 3000
+      },
+      {
+        "provider": "openrouter",
+        "id": "x-ai/grok-4-fast",
+        "pricePerToken": { "input": "0.0000002", "output": "0.0000005" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 85.0,
+      "gpqa-diamond": 85.7,
+      "hle": 20.0,
+      "aime-2025": 92.0,
+      "livecodebench": 80.0,
+      "lmarena-text": 1420
+    }
+  },
+  {
+    "name": "Grok Code Fast 1",
+    "family": "Grok Code",
+    "type": "text",
+    "released": "2025-08-26",
+    "context": 256000,
+    "maxOutput": 10000,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "Speedy, economical reasoning model built for agentic coding loops.",
+    "offerings": [
+      {
+        "provider": "xai-api",
+        "id": "grok-code-fast-1",
+        "input": 0.2,
+        "output": 1.5,
+        "cachedInput": 0.02,
+        "tps": 190
+      },
+      {
+        "provider": "openrouter",
+        "id": "x-ai/grok-code-fast-1",
+        "pricePerToken": { "input": "0.0000002", "output": "0.0000015" }
+      }
+    ],
+    "scores": { "swe-bench-verified": 70.8, "livecodebench": 60.0, "terminal-bench": 36.0 }
+  },
+  {
+    "name": "Grok 3 Mini",
+    "family": "Grok 3",
+    "type": "text",
+    "released": "2025-02-17",
+    "context": 131072,
+    "maxOutput": 16384,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Lightweight reasoning model that exposes its thinking trace.",
+    "offerings": [
+      {
+        "provider": "xai-api",
+        "id": "grok-3-mini",
+        "input": 0.3,
+        "output": 0.5,
+        "cachedInput": 0.075,
+        "tps": 120
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "grok-3-mini",
+        "pricePer1K": { "input": 0.00025, "output": 0.00127 }
+      }
+    ],
+    "scores": { "mmlu-pro": 82.8, "gpqa-diamond": 78.5, "aime-2025": 81.0, "livecodebench": 69.0 }
+  }
+]

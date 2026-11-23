@@ -1,0 +1,89 @@
+[
+  {
+    "name": "Command A",
+    "family": "Command",
+    "type": "text",
+    "released": "2025-03-13",
+    "context": 256000,
+    "maxOutput": 8192,
+    "params": 111,
+    "openWeights": true,
+    "license": "CC-BY-NC 4.0",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Cohere's enterprise model for agents, retrieval and 23 languages; runs on two GPUs.",
+    "offerings": [
+      {
+        "provider": "cohere-api",
+        "id": "command-a-03-2025",
+        "input": 2.5,
+        "output": 10,
+        "tps": 150
+      },
+      {
+        "provider": "openrouter",
+        "id": "cohere/command-a",
+        "pricePerToken": { "input": "0.0000025", "output": "0.00001" }
+      }
+    ],
+    "scores": { "mmlu-pro": 71.0, "gpqa-diamond": 50.8, "math-500": 80.0, "lmarena-text": 1340 }
+  },
+  {
+    "name": "Command R+",
+    "family": "Command",
+    "type": "text",
+    "status": "deprecated",
+    "released": "2024-08-30",
+    "context": "128K",
+    "maxOutput": 4096,
+    "params": 104,
+    "openWeights": true,
+    "license": "CC-BY-NC 4.0",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Earlier Command model optimized for retrieval-augmented generation. Superseded by Command A.",
+    "offerings": [
+      { "provider": "cohere-api", "id": "command-r-plus-08-2024", "input": 2.5, "output": 10 },
+      {
+        "provider": "aws-bedrock",
+        "id": "cohere.command-r-plus-v1:0",
+        "pricePer1K": { "input": 0.003, "output": 0.015 }
+      }
+    ],
+    "scores": { "mmlu-pro": 52.0, "gpqa-diamond": 34.0, "lmarena-text": 1276 }
+  },
+  {
+    "name": "Embed v4",
+    "family": "Embed",
+    "type": "embedding",
+    "released": "2025-04-15",
+    "context": "128K",
+    "license": "Proprietary",
+    "input": ["text", "image"],
+    "output": [],
+    "capabilities": [],
+    "description": "Multimodal embedding model for text and images in 100+ languages.",
+    "offerings": [
+      { "provider": "cohere-api", "id": "embed-v4.0", "input": 0.12 },
+      { "provider": "aws-bedrock", "id": "cohere.embed-v4:0", "pricePer1K": { "input": 0.00012 } }
+    ]
+  },
+  {
+    "name": "Rerank 3.5",
+    "family": "Rerank",
+    "type": "reranking",
+    "released": "2024-12-02",
+    "context": 4096,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "Re-orders search results by relevance to a query. Priced per 1,000 searches.",
+    "offerings": [
+      { "provider": "cohere-api", "id": "rerank-v3.5", "unit": "1k-searches", "price": 2 },
+      { "provider": "aws-bedrock", "id": "cohere.rerank-v3-5:0", "unit": "1k-searches", "price": 2 }
+    ]
+  }
+]

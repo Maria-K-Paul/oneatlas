@@ -1,0 +1,177 @@
+[
+  {
+    "name": "DeepSeek-V3.2-Exp",
+    "family": "DeepSeek-V3",
+    "type": "text",
+    "status": "preview",
+    "released": "2025-09-29",
+    "context": 131072,
+    "maxOutput": 65536,
+    "params": 671,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "Experimental release using DeepSeek Sparse Attention to cut long-context costs.",
+    "offerings": [
+      {
+        "provider": "deepseek-api",
+        "id": "deepseek-chat",
+        "input": 0.28,
+        "output": 0.42,
+        "cachedInput": 0.028,
+        "tps": 30,
+        "ttftMs": 1500
+      },
+      {
+        "provider": "deepinfra",
+        "id": "deepseek-ai/DeepSeek-V3.2-Exp",
+        "input": 0.27,
+        "output": 0.4
+      },
+      {
+        "provider": "openrouter",
+        "id": "deepseek/deepseek-v3.2-exp",
+        "pricePerToken": { "input": "0.00000027", "output": "0.0000004" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 85.0,
+      "gpqa-diamond": 79.9,
+      "hle": 19.8,
+      "aime-2025": 89.3,
+      "swe-bench-verified": 67.8,
+      "livecodebench": 74.1,
+      "terminal-bench": 37.7,
+      "lmarena-text": 1420
+    }
+  },
+  {
+    "name": "DeepSeek-V3.1",
+    "family": "DeepSeek-V3",
+    "type": "text",
+    "released": "2025-08-21",
+    "context": 131072,
+    "maxOutput": 65536,
+    "params": 671,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Hybrid model that switches between thinking and non-thinking modes, with stronger tool use.",
+    "offerings": [
+      { "provider": "together", "id": "deepseek-ai/DeepSeek-V3.1", "input": 0.6, "output": 1.7 },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/deepseek-v3p1",
+        "input": 0.56,
+        "output": 1.68
+      },
+      { "provider": "deepinfra", "id": "deepseek-ai/DeepSeek-V3.1", "input": 0.27, "output": 1 },
+      {
+        "provider": "aws-bedrock",
+        "id": "deepseek.v3-v1:0",
+        "pricePer1K": { "input": 0.00058, "output": 0.00168 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "deepseek/deepseek-chat-v3.1",
+        "pricePerToken": { "input": "0.00000027", "output": "0.000001" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 84.8,
+      "gpqa-diamond": 80.1,
+      "hle": 15.9,
+      "aime-2025": 88.4,
+      "swe-bench-verified": 66.0,
+      "livecodebench": 74.8,
+      "terminal-bench": 31.3,
+      "lmarena-text": 1416
+    }
+  },
+  {
+    "name": "DeepSeek-R1",
+    "family": "DeepSeek-R1",
+    "type": "text",
+    "released": "2025-05-28",
+    "context": 163840,
+    "maxOutput": 65536,
+    "params": 671,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "The 0528 update of DeepSeek's open reasoning model, with deeper thinking and fewer hallucinations.",
+    "offerings": [
+      { "provider": "together", "id": "deepseek-ai/DeepSeek-R1", "input": 3, "output": 7 },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/deepseek-r1-0528",
+        "input": 3,
+        "output": 8
+      },
+      {
+        "provider": "deepinfra",
+        "id": "deepseek-ai/DeepSeek-R1-0528",
+        "input": 0.5,
+        "output": 2.15
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "deepseek.r1-v1:0",
+        "pricePer1K": { "input": 0.00135, "output": 0.0054 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "deepseek/deepseek-r1-0528",
+        "pricePerToken": { "input": "0.0000005", "output": "0.00000215" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 85.0,
+      "gpqa-diamond": 81.0,
+      "hle": 17.7,
+      "aime-2025": 87.5,
+      "swe-bench-verified": 57.6,
+      "livecodebench": 73.3,
+      "lmarena-text": 1418
+    }
+  },
+  {
+    "name": "DeepSeek-V3",
+    "family": "DeepSeek-V3",
+    "type": "text",
+    "status": "deprecated",
+    "released": "2025-03-24",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 671,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "The 0324 checkpoint of DeepSeek-V3. Superseded by V3.1 and V3.2.",
+    "offerings": [
+      {
+        "provider": "deepinfra",
+        "id": "deepseek-ai/DeepSeek-V3-0324",
+        "input": 0.28,
+        "output": 0.88
+      },
+      { "provider": "together", "id": "deepseek-ai/DeepSeek-V3", "input": 1.25, "output": 1.25 }
+    ],
+    "scores": {
+      "mmlu-pro": 81.2,
+      "gpqa-diamond": 68.4,
+      "aime-2025": 59.4,
+      "math-500": 94.0,
+      "livecodebench": 49.2,
+      "lmarena-text": 1390
+    }
+  }
+]

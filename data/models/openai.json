@@ -1,0 +1,642 @@
+[
+  {
+    "name": "GPT-5.1",
+    "family": "GPT-5",
+    "type": "text",
+    "released": "2025-11-13",
+    "knowledgeCutoff": "2024-09",
+    "context": 400000,
+    "maxOutput": 128000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "OpenAI's flagship model, which adapts how long it thinks to the difficulty of the request.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-5.1",
+        "input": 1.25,
+        "output": 10,
+        "cachedInput": 0.125,
+        "tps": 80,
+        "ttftMs": 900
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-5.1",
+        "pricePer1K": { "input": 0.00125, "output": 0.01, "cachedInput": 0.000125 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-5.1",
+        "pricePerToken": {
+          "input": "0.00000125",
+          "output": "0.00001",
+          "cachedInput": "0.000000125"
+        }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 87.0,
+      "gpqa-diamond": 88.1,
+      "hle": 26.5,
+      "aime-2025": 94.0,
+      "swe-bench-verified": 76.3,
+      "livecodebench": 85.1,
+      "terminal-bench": 47.6,
+      "tau2-bench-retail": 80.4,
+      "mmmu": 85.4,
+      "lmarena-text": 1458
+    }
+  },
+  {
+    "name": "GPT-5",
+    "family": "GPT-5",
+    "type": "text",
+    "released": "2025-08-07",
+    "knowledgeCutoff": "2024-09",
+    "context": 400000,
+    "maxOutput": 128000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "The first GPT-5 release, with built-in reasoning and strong coding and agentic performance.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-5",
+        "input": 1.25,
+        "output": 10,
+        "cachedInput": 0.125,
+        "tps": 75,
+        "ttftMs": 1100
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-5",
+        "pricePer1K": { "input": 0.00125, "output": 0.01, "cachedInput": 0.000125 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-5",
+        "pricePerToken": { "input": "0.00000125", "output": "0.00001" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 87.1,
+      "gpqa-diamond": 85.7,
+      "hle": 24.8,
+      "aime-2025": 94.6,
+      "swe-bench-verified": 74.9,
+      "livecodebench": 84.6,
+      "terminal-bench": 43.8,
+      "tau2-bench-retail": 81.1,
+      "mmmu": 84.2,
+      "mrcr-128k": 95.2,
+      "lmarena-text": 1442
+    }
+  },
+  {
+    "name": "GPT-5 mini",
+    "family": "GPT-5",
+    "type": "text",
+    "released": "2025-08-07",
+    "knowledgeCutoff": "2024-05",
+    "context": 400000,
+    "maxOutput": 128000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "A faster, cheaper GPT-5 for well-defined tasks.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-5-mini",
+        "input": 0.25,
+        "output": 2,
+        "cachedInput": 0.025,
+        "tps": 140,
+        "ttftMs": 700
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-5-mini",
+        "pricePer1K": { "input": 0.00025, "output": 0.002 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-5-mini",
+        "pricePerToken": { "input": "0.00000025", "output": "0.000002" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 83.7,
+      "gpqa-diamond": 82.3,
+      "hle": 16.7,
+      "aime-2025": 91.1,
+      "swe-bench-verified": 71.0,
+      "livecodebench": 78.0,
+      "tau2-bench-retail": 74.0,
+      "mmmu": 81.6
+    }
+  },
+  {
+    "name": "GPT-5 nano",
+    "family": "GPT-5",
+    "type": "text",
+    "released": "2025-08-07",
+    "knowledgeCutoff": "2024-05",
+    "context": 400000,
+    "maxOutput": 128000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "The smallest GPT-5, for classification, extraction and other high-volume work.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-5-nano",
+        "input": 0.05,
+        "output": 0.4,
+        "cachedInput": 0.005,
+        "tps": 190,
+        "ttftMs": 600
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-5-nano",
+        "pricePerToken": { "input": "0.00000005", "output": "0.0000004" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 78.0,
+      "gpqa-diamond": 71.2,
+      "aime-2025": 85.2,
+      "swe-bench-verified": 54.7,
+      "livecodebench": 66.0,
+      "mmmu": 75.6
+    }
+  },
+  {
+    "name": "GPT-4.1",
+    "family": "GPT-4.1",
+    "type": "text",
+    "released": "2025-04-14",
+    "knowledgeCutoff": "2024-06",
+    "context": 1047576,
+    "maxOutput": 32768,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "Non-reasoning model with a 1M-token context window, tuned for instruction following and coding.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-4.1",
+        "input": 2,
+        "output": 8,
+        "cachedInput": 0.5,
+        "tps": 95,
+        "ttftMs": 500
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-4.1",
+        "pricePer1K": { "input": 0.002, "output": 0.008, "cachedInput": 0.0005 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-4.1",
+        "pricePerToken": { "input": "0.000002", "output": "0.000008" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 80.6,
+      "gpqa-diamond": 66.3,
+      "aime-2025": 38.0,
+      "math-500": 91.3,
+      "swe-bench-verified": 54.6,
+      "livecodebench": 45.7,
+      "mmmu": 74.8,
+      "mrcr-128k": 57.2,
+      "lmarena-text": 1408
+    }
+  },
+  {
+    "name": "GPT-4.1 mini",
+    "family": "GPT-4.1",
+    "type": "text",
+    "released": "2025-04-14",
+    "knowledgeCutoff": "2024-06",
+    "context": 1047576,
+    "maxOutput": 32768,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "A smaller GPT-4.1 that keeps the 1M-token context at a fraction of the price.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-4.1-mini",
+        "input": 0.4,
+        "output": 1.6,
+        "cachedInput": 0.1,
+        "tps": 120,
+        "ttftMs": 400
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-4.1-mini",
+        "pricePer1K": { "input": 0.0004, "output": 0.0016 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-4.1-mini",
+        "pricePerToken": { "input": "0.0000004", "output": "0.0000016" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 78.1,
+      "gpqa-diamond": 65.0,
+      "math-500": 88.0,
+      "swe-bench-verified": 23.6,
+      "livecodebench": 40.1,
+      "mmmu": 72.7,
+      "mrcr-128k": 47.2
+    }
+  },
+  {
+    "name": "GPT-4o",
+    "family": "GPT-4o",
+    "type": "text",
+    "released": "2024-05-13",
+    "knowledgeCutoff": "2023-10",
+    "context": "128K",
+    "maxOutput": 16384,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "OpenAI's omni model from 2024, still widely deployed for general chat and vision.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-4o",
+        "input": 2.5,
+        "output": 10,
+        "cachedInput": 1.25,
+        "tps": 105,
+        "ttftMs": 450
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-4o",
+        "pricePer1K": { "input": 0.0025, "output": 0.01, "cachedInput": 0.00125 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-4o",
+        "pricePerToken": { "input": "0.0000025", "output": "0.00001" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 74.7,
+      "gpqa-diamond": 53.6,
+      "math-500": 74.6,
+      "swe-bench-verified": 33.2,
+      "livecodebench": 30.8,
+      "mmmu": 69.1,
+      "lmarena-text": 1372
+    }
+  },
+  {
+    "name": "GPT-4o mini",
+    "family": "GPT-4o",
+    "type": "text",
+    "released": "2024-07-18",
+    "knowledgeCutoff": "2023-10",
+    "context": "128K",
+    "maxOutput": 16384,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "Small, inexpensive multimodal model for lightweight tasks.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "gpt-4o-mini",
+        "input": 0.15,
+        "output": 0.6,
+        "cachedInput": 0.075,
+        "tps": 110,
+        "ttftMs": 400
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "gpt-4o-mini",
+        "pricePer1K": { "input": 0.00015, "output": 0.0006 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-4o-mini",
+        "pricePerToken": { "input": "0.00000015", "output": "0.0000006" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 63.1,
+      "gpqa-diamond": 40.2,
+      "math-500": 70.2,
+      "livecodebench": 23.0,
+      "mmmu": 59.4,
+      "lmarena-text": 1318
+    }
+  },
+  {
+    "name": "o3",
+    "family": "o-series",
+    "type": "text",
+    "released": "2025-04-16",
+    "knowledgeCutoff": "2024-06",
+    "context": 200000,
+    "maxOutput": 100000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "OpenAI's earlier flagship reasoning model, strong at math, science and visual reasoning.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "o3",
+        "input": 2,
+        "output": 8,
+        "cachedInput": 0.5,
+        "tps": 60,
+        "ttftMs": 6000
+      },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "o3",
+        "pricePer1K": { "input": 0.002, "output": 0.008 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/o3",
+        "pricePerToken": { "input": "0.000002", "output": "0.000008" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 85.6,
+      "gpqa-diamond": 83.3,
+      "hle": 20.3,
+      "aime-2025": 88.9,
+      "swe-bench-verified": 69.1,
+      "livecodebench": 78.4,
+      "tau2-bench-retail": 70.4,
+      "mmmu": 82.9,
+      "lmarena-text": 1418
+    }
+  },
+  {
+    "name": "o4-mini",
+    "family": "o-series",
+    "type": "text",
+    "released": "2025-04-16",
+    "knowledgeCutoff": "2024-06",
+    "context": 200000,
+    "maxOutput": 100000,
+    "license": "Proprietary",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "fine_tuning"],
+    "description": "A compact reasoning model with unusually strong math results for its cost.",
+    "offerings": [
+      {
+        "provider": "openai-api",
+        "id": "o4-mini",
+        "input": 1.1,
+        "output": 4.4,
+        "cachedInput": 0.275,
+        "tps": 120,
+        "ttftMs": 4000
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/o4-mini",
+        "pricePerToken": { "input": "0.0000011", "output": "0.0000044" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 83.2,
+      "gpqa-diamond": 81.4,
+      "hle": 14.7,
+      "aime-2025": 92.7,
+      "swe-bench-verified": 68.1,
+      "livecodebench": 80.2,
+      "mmmu": 81.6
+    }
+  },
+  {
+    "name": "gpt-oss-120b",
+    "family": "gpt-oss",
+    "type": "text",
+    "released": "2025-08-05",
+    "knowledgeCutoff": "2024-06",
+    "context": 131072,
+    "maxOutput": 131072,
+    "params": 117,
+    "openWeights": true,
+    "license": "Apache 2.0",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "OpenAI's larger open-weights reasoning model; a mixture of experts that fits on a single 80 GB GPU.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "openai/gpt-oss-120b",
+        "input": 0.15,
+        "output": 0.75,
+        "tps": 480,
+        "ttftMs": 250
+      },
+      {
+        "provider": "cerebras",
+        "id": "gpt-oss-120b",
+        "input": 0.25,
+        "output": 0.69,
+        "tps": 2800,
+        "ttftMs": 300
+      },
+      {
+        "provider": "together",
+        "id": "openai/gpt-oss-120b",
+        "input": 0.15,
+        "output": 0.6,
+        "tps": 160
+      },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/gpt-oss-120b",
+        "input": 0.15,
+        "output": 0.6,
+        "tps": 210
+      },
+      {
+        "provider": "deepinfra",
+        "id": "openai/gpt-oss-120b",
+        "input": 0.09,
+        "output": 0.45,
+        "tps": 90
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "openai.gpt-oss-120b-1:0",
+        "pricePer1K": { "input": 0.00015, "output": 0.0006 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-oss-120b",
+        "pricePerToken": { "input": "0.00000009", "output": "0.00000045" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 80.8,
+      "gpqa-diamond": 80.1,
+      "hle": 14.9,
+      "aime-2025": 92.5,
+      "swe-bench-verified": 62.4,
+      "livecodebench": 69.4,
+      "tau2-bench-retail": 67.8
+    }
+  },
+  {
+    "name": "gpt-oss-20b",
+    "family": "gpt-oss",
+    "type": "text",
+    "released": "2025-08-05",
+    "knowledgeCutoff": "2024-06",
+    "context": 131072,
+    "maxOutput": 131072,
+    "params": 21,
+    "openWeights": true,
+    "license": "Apache 2.0",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "A small open-weights reasoning model that runs on a 16 GB consumer GPU.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "openai/gpt-oss-20b",
+        "input": 0.075,
+        "output": 0.3,
+        "tps": 1000,
+        "ttftMs": 200
+      },
+      {
+        "provider": "together",
+        "id": "openai/gpt-oss-20b",
+        "input": 0.05,
+        "output": 0.2,
+        "tps": 240
+      },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/gpt-oss-20b",
+        "input": 0.07,
+        "output": 0.3
+      },
+      { "provider": "deepinfra", "id": "openai/gpt-oss-20b", "input": 0.03, "output": 0.14 },
+      {
+        "provider": "openrouter",
+        "id": "openai/gpt-oss-20b",
+        "pricePerToken": { "input": "0.00000003", "output": "0.00000014" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 74.0,
+      "gpqa-diamond": 71.5,
+      "hle": 10.9,
+      "aime-2025": 85.0,
+      "swe-bench-verified": 60.7,
+      "livecodebench": 61.0
+    }
+  },
+  {
+    "name": "text-embedding-3-large",
+    "family": "text-embedding-3",
+    "type": "embedding",
+    "released": "2024-01-25",
+    "context": 8191,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "OpenAI's most capable embedding model, with 3,072 dimensions that can be shortened.",
+    "offerings": [
+      { "provider": "openai-api", "id": "text-embedding-3-large", "input": 0.13 },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "text-embedding-3-large",
+        "pricePer1K": { "input": 0.00013 }
+      }
+    ]
+  },
+  {
+    "name": "text-embedding-3-small",
+    "family": "text-embedding-3",
+    "type": "embedding",
+    "released": "2024-01-25",
+    "context": 8191,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "A small, inexpensive embedding model with 1,536 dimensions.",
+    "offerings": [
+      { "provider": "openai-api", "id": "text-embedding-3-small", "input": 0.02 },
+      {
+        "provider": "azure-ai-foundry",
+        "id": "text-embedding-3-small",
+        "pricePer1K": { "input": 0.00002 }
+      }
+    ]
+  },
+  {
+    "name": "GPT Image 1",
+    "family": "GPT Image",
+    "type": "image",
+    "released": "2025-04-23",
+    "license": "Proprietary",
+    "input": ["text", "image"],
+    "output": ["image"],
+    "capabilities": [],
+    "description": "Natively multimodal image generation and editing. Price shown is for a medium-quality 1024×1024 image.",
+    "offerings": [
+      { "provider": "openai-api", "id": "gpt-image-1", "unit": "image", "price": 0.042 },
+      { "provider": "azure-ai-foundry", "id": "gpt-image-1", "unit": "image", "price": 0.042 }
+    ]
+  },
+  {
+    "name": "GPT-4o Transcribe",
+    "family": "GPT-4o",
+    "type": "transcription",
+    "released": "2025-03-20",
+    "license": "Proprietary",
+    "input": ["audio"],
+    "output": ["text"],
+    "capabilities": [],
+    "description": "Speech-to-text built on GPT-4o, with lower word error rates than Whisper.",
+    "offerings": [
+      { "provider": "openai-api", "id": "gpt-4o-transcribe", "unit": "minute", "price": 0.006 }
+    ]
+  }
+]

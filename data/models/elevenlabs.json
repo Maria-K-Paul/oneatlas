@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Eleven Multilingual v2",
+    "family": "Eleven",
+    "type": "speech",
+    "released": "2023-08-22",
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["audio"],
+    "capabilities": [],
+    "description": "Lifelike, emotionally rich text-to-speech in 29 languages. Published per 1K characters; stored per 1M.",
+    "offerings": [
+      {
+        "provider": "elevenlabs-api",
+        "id": "eleven_multilingual_v2",
+        "unit": "1k-chars",
+        "price": 0.1
+      }
+    ]
+  },
+  {
+    "name": "Eleven Flash v2.5",
+    "family": "Eleven",
+    "type": "speech",
+    "released": "2024-12-05",
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["audio"],
+    "capabilities": [],
+    "description": "Ultra-low-latency text-to-speech (~75 ms) for real-time voice agents.",
+    "offerings": [
+      { "provider": "elevenlabs-api", "id": "eleven_flash_v2_5", "unit": "1k-chars", "price": 0.05 }
+    ]
+  },
+  {
+    "name": "Scribe v1",
+    "family": "Scribe",
+    "type": "transcription",
+    "released": "2025-02-26",
+    "license": "Proprietary",
+    "input": ["audio"],
+    "output": ["text"],
+    "capabilities": [],
+    "description": "Speech-to-text in 99 languages with speaker diarization. Published per hour of audio; stored per minute.",
+    "offerings": [{ "provider": "elevenlabs-api", "id": "scribe_v1", "unit": "hour", "price": 0.4 }]
+  }
+]

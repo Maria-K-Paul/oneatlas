@@ -1,0 +1,54 @@
+[
+  {
+    "name": "Phi-4",
+    "family": "Phi-4",
+    "type": "text",
+    "released": "2024-12-12",
+    "context": 16384,
+    "maxOutput": 16384,
+    "params": 14,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["json", "fine_tuning"],
+    "description": "14B small language model trained heavily on synthetic data, strong at math reasoning.",
+    "offerings": [
+      {
+        "provider": "azure-ai-foundry",
+        "id": "Phi-4",
+        "pricePer1K": { "input": 0.000125, "output": 0.0005 }
+      },
+      { "provider": "deepinfra", "id": "microsoft/phi-4", "input": 0.07, "output": 0.14 },
+      {
+        "provider": "openrouter",
+        "id": "microsoft/phi-4",
+        "pricePerToken": { "input": "0.00000007", "output": "0.00000014" }
+      }
+    ],
+    "scores": { "mmlu-pro": 70.4, "gpqa-diamond": 56.1, "math-500": 80.4, "livecodebench": 23.1 }
+  },
+  {
+    "name": "Phi-4-mini",
+    "family": "Phi-4",
+    "type": "text",
+    "released": "2025-02-26",
+    "context": 131072,
+    "maxOutput": 16384,
+    "params": 3.8,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "3.8B model with a 128K context, for on-device and edge use.",
+    "offerings": [
+      {
+        "provider": "azure-ai-foundry",
+        "id": "Phi-4-mini-instruct",
+        "pricePer1K": { "input": 0.000075, "output": 0.0003 }
+      }
+    ],
+    "scores": { "mmlu-pro": 52.8, "gpqa-diamond": 30.4, "math-500": 62.0 }
+  }
+]

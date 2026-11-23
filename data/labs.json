@@ -1,0 +1,164 @@
+[
+  {
+    "slug": "openai",
+    "name": "OpenAI",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 2015,
+    "website": "https://openai.com",
+    "description": "Maker of the GPT and o-series models, gpt-oss open-weights models, and the DALL·E and Whisper lines."
+  },
+  {
+    "slug": "anthropic",
+    "name": "Anthropic",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 2021,
+    "website": "https://www.anthropic.com",
+    "description": "AI safety company building the Claude family of models."
+  },
+  {
+    "slug": "google",
+    "name": "Google",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 1998,
+    "website": "https://deepmind.google",
+    "description": "Google DeepMind builds the Gemini models, the open Gemma family, and Imagen and Veo for images and video."
+  },
+  {
+    "slug": "meta",
+    "name": "Meta",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 2004,
+    "website": "https://ai.meta.com",
+    "description": "Publishes the Llama family of open-weights models."
+  },
+  {
+    "slug": "mistral",
+    "name": "Mistral AI",
+    "kind": "company",
+    "headquarters": "France",
+    "foundedYear": 2023,
+    "website": "https://mistral.ai",
+    "description": "European lab shipping both open-weights and commercial models, including Mistral, Magistral and Codestral."
+  },
+  {
+    "slug": "deepseek",
+    "name": "DeepSeek",
+    "kind": "company",
+    "headquarters": "China",
+    "foundedYear": 2023,
+    "website": "https://www.deepseek.com",
+    "description": "Research lab known for efficient open-weights mixture-of-experts and reasoning models."
+  },
+  {
+    "slug": "alibaba",
+    "name": "Alibaba Cloud",
+    "kind": "company",
+    "headquarters": "China",
+    "foundedYear": 2009,
+    "website": "https://qwenlm.github.io",
+    "description": "Develops the Qwen family, spanning open-weights chat, coding and embedding models and the proprietary Qwen-Max."
+  },
+  {
+    "slug": "xai",
+    "name": "xAI",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 2023,
+    "website": "https://x.ai",
+    "description": "Builds the Grok family of models."
+  },
+  {
+    "slug": "cohere",
+    "name": "Cohere",
+    "kind": "company",
+    "headquarters": "Canada",
+    "foundedYear": 2019,
+    "website": "https://cohere.com",
+    "description": "Enterprise-focused lab offering Command generation models plus Embed and Rerank for retrieval."
+  },
+  {
+    "slug": "microsoft",
+    "name": "Microsoft",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 1975,
+    "website": "https://azure.microsoft.com/en-us/products/phi",
+    "description": "Microsoft Research publishes the Phi family of small open-weights models."
+  },
+  {
+    "slug": "amazon",
+    "name": "Amazon",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 1994,
+    "website": "https://aws.amazon.com/ai/generative-ai/nova/",
+    "description": "Builds the Nova foundation models and Titan embeddings, served on Amazon Bedrock."
+  },
+  {
+    "slug": "moonshot",
+    "name": "Moonshot AI",
+    "kind": "company",
+    "headquarters": "China",
+    "foundedYear": 2023,
+    "website": "https://www.moonshot.ai",
+    "description": "Creator of the Kimi models, including the trillion-parameter open-weights Kimi K2."
+  },
+  {
+    "slug": "zhipu",
+    "name": "Zhipu AI",
+    "kind": "company",
+    "headquarters": "China",
+    "foundedYear": 2019,
+    "website": "https://z.ai",
+    "description": "Tsinghua spin-out building the open-weights GLM family."
+  },
+  {
+    "slug": "nvidia",
+    "name": "NVIDIA",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 1993,
+    "website": "https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/",
+    "description": "Publishes the Nemotron open models, tuned for reasoning and efficient inference."
+  },
+  {
+    "slug": "black-forest-labs",
+    "name": "Black Forest Labs",
+    "kind": "company",
+    "headquarters": "Germany",
+    "foundedYear": 2024,
+    "website": "https://bfl.ai",
+    "description": "Image generation lab behind the FLUX models."
+  },
+  {
+    "slug": "elevenlabs",
+    "name": "ElevenLabs",
+    "kind": "company",
+    "headquarters": "United States",
+    "foundedYear": 2022,
+    "website": "https://elevenlabs.io",
+    "description": "Voice AI company offering text-to-speech and speech-to-text models."
+  },
+  {
+    "slug": "ai2",
+    "name": "Ai2",
+    "kind": "research_institute",
+    "headquarters": "United States",
+    "foundedYear": 2014,
+    "website": "https://allenai.org",
+    "description": "The Allen Institute for AI, a nonprofit that releases fully open models (weights, data and training code), including OLMo."
+  },
+  {
+    "slug": "nous-research",
+    "name": "Nous Research",
+    "kind": "open_community",
+    "headquarters": "United States",
+    "foundedYear": 2023,
+    "website": "https://nousresearch.com",
+    "description": "Open research collective known for the Hermes fine-tunes of open-weights models."
+  }
+]

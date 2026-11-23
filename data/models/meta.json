@@ -1,0 +1,294 @@
+[
+  {
+    "name": "Llama 4 Maverick",
+    "family": "Llama 4",
+    "type": "text",
+    "released": "2025-04-05",
+    "knowledgeCutoff": "2024-08",
+    "context": 1048576,
+    "maxOutput": 16384,
+    "params": 400,
+    "openWeights": true,
+    "license": "Llama 4 Community License",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Natively multimodal mixture-of-experts model: 17B active and 400B total parameters.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "meta-llama/llama-4-maverick-17b-128e-instruct",
+        "context": 131072,
+        "input": 0.2,
+        "output": 0.6,
+        "tps": 560,
+        "ttftMs": 200
+      },
+      {
+        "provider": "together",
+        "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "input": 0.27,
+        "output": 0.85,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/llama4-maverick-instruct-basic",
+        "input": 0.22,
+        "output": 0.88
+      },
+      {
+        "provider": "deepinfra",
+        "id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+        "input": 0.15,
+        "output": 0.6,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "meta.llama4-maverick-17b-instruct-v1:0",
+        "pricePer1K": { "input": 0.00024, "output": 0.00097 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "meta-llama/llama-4-maverick",
+        "pricePerToken": { "input": "0.00000015", "output": "0.0000006" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 80.5,
+      "gpqa-diamond": 69.8,
+      "math-500": 85.0,
+      "livecodebench": 43.4,
+      "mmmu": 73.4,
+      "lmarena-text": 1330
+    }
+  },
+  {
+    "name": "Llama 4 Scout",
+    "family": "Llama 4",
+    "type": "text",
+    "released": "2025-04-05",
+    "knowledgeCutoff": "2024-08",
+    "context": 10000000,
+    "maxOutput": 16384,
+    "params": 109,
+    "openWeights": true,
+    "license": "Llama 4 Community License",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Efficient Llama 4 model with an industry-leading 10M-token context. Most hosts serve a shorter window.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "meta-llama/llama-4-scout-17b-16e-instruct",
+        "context": 131072,
+        "input": 0.11,
+        "output": 0.34,
+        "tps": 750,
+        "ttftMs": 180
+      },
+      {
+        "provider": "cerebras",
+        "id": "llama-4-scout-17b-16e-instruct",
+        "context": 32768,
+        "input": 0.65,
+        "output": 0.85,
+        "tps": 2600
+      },
+      {
+        "provider": "together",
+        "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "context": 1048576,
+        "input": 0.18,
+        "output": 0.59
+      },
+      {
+        "provider": "deepinfra",
+        "id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
+        "context": 327680,
+        "input": 0.08,
+        "output": 0.3
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "meta.llama4-scout-17b-instruct-v1:0",
+        "context": 3500000,
+        "pricePer1K": { "input": 0.00017, "output": 0.00066 }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 74.3,
+      "gpqa-diamond": 57.2,
+      "math-500": 82.0,
+      "livecodebench": 32.8,
+      "mmmu": 69.4,
+      "lmarena-text": 1305
+    }
+  },
+  {
+    "name": "Llama 3.3 70B",
+    "family": "Llama 3",
+    "type": "text",
+    "released": "2024-12-06",
+    "knowledgeCutoff": "2023-12",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 70,
+    "openWeights": true,
+    "license": "Llama 3.3 Community License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Text-only 70B model with quality close to Llama 3.1 405B at a fraction of the cost.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "llama-3.3-70b-versatile",
+        "input": 0.59,
+        "output": 0.79,
+        "tps": 330,
+        "ttftMs": 220
+      },
+      { "provider": "cerebras", "id": "llama-3.3-70b", "input": 0.85, "output": 1.2, "tps": 2100 },
+      {
+        "provider": "together",
+        "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+        "input": 0.88,
+        "output": 0.88,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/llama-v3p3-70b-instruct",
+        "input": 0.9,
+        "output": 0.9
+      },
+      {
+        "provider": "deepinfra",
+        "id": "meta-llama/Llama-3.3-70B-Instruct-Turbo",
+        "input": 0.23,
+        "output": 0.4,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "meta.llama3-3-70b-instruct-v1:0",
+        "pricePer1K": { "input": 0.00072, "output": 0.00072 }
+      },
+      {
+        "provider": "openrouter",
+        "id": "meta-llama/llama-3.3-70b-instruct",
+        "pricePerToken": { "input": "0.00000013", "output": "0.0000004" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 68.9,
+      "gpqa-diamond": 50.5,
+      "math-500": 77.0,
+      "livecodebench": 28.8,
+      "lmarena-text": 1318
+    }
+  },
+  {
+    "name": "Llama 3.1 405B",
+    "family": "Llama 3",
+    "type": "text",
+    "released": "2024-07-23",
+    "knowledgeCutoff": "2023-12",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 405,
+    "openWeights": true,
+    "license": "Llama 3.1 Community License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Meta's largest dense open model, widely used as a base for distillation and fine-tuning.",
+    "offerings": [
+      {
+        "provider": "together",
+        "id": "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo",
+        "input": 3.5,
+        "output": 3.5,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "fireworks",
+        "id": "accounts/fireworks/models/llama-v3p1-405b-instruct",
+        "input": 3,
+        "output": 3
+      },
+      {
+        "provider": "deepinfra",
+        "id": "meta-llama/Meta-Llama-3.1-405B-Instruct",
+        "input": 0.8,
+        "output": 0.8
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "meta.llama3-1-405b-instruct-v1:0",
+        "pricePer1K": { "input": 0.0024, "output": 0.0024 }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 73.3,
+      "gpqa-diamond": 50.7,
+      "math-500": 73.8,
+      "livecodebench": 30.5,
+      "lmarena-text": 1335
+    }
+  },
+  {
+    "name": "Llama 3.1 8B",
+    "family": "Llama 3",
+    "type": "text",
+    "released": "2024-07-23",
+    "knowledgeCutoff": "2023-12",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 8,
+    "openWeights": true,
+    "license": "Llama 3.1 Community License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "fine_tuning"],
+    "description": "Small Llama for edge, on-device and very high-volume use.",
+    "offerings": [
+      {
+        "provider": "groq",
+        "id": "llama-3.1-8b-instant",
+        "input": 0.05,
+        "output": 0.08,
+        "tps": 840,
+        "ttftMs": 150
+      },
+      { "provider": "cerebras", "id": "llama3.1-8b", "input": 0.1, "output": 0.1, "tps": 2200 },
+      {
+        "provider": "together",
+        "id": "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo",
+        "input": 0.18,
+        "output": 0.18
+      },
+      {
+        "provider": "deepinfra",
+        "id": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+        "input": 0.02,
+        "output": 0.05
+      },
+      {
+        "provider": "aws-bedrock",
+        "id": "meta.llama3-1-8b-instruct-v1:0",
+        "pricePer1K": { "input": 0.00022, "output": 0.00022 }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 48.3,
+      "gpqa-diamond": 30.4,
+      "math-500": 51.9,
+      "livecodebench": 11.6,
+      "lmarena-text": 1212
+    }
+  }
+]

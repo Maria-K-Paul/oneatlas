@@ -1,0 +1,299 @@
+[
+  {
+    "name": "Gemini 3 Pro",
+    "family": "Gemini 3",
+    "type": "text",
+    "status": "preview",
+    "released": "2025-11-18",
+    "knowledgeCutoff": "2025-01",
+    "context": 1048576,
+    "maxOutput": 65536,
+    "license": "Proprietary",
+    "input": ["text", "vision", "audio", "video", "pdf"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "Google's frontier multimodal reasoning model, in preview. Prices shown are for prompts up to 200K tokens.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "gemini-3-pro-preview",
+        "input": 2,
+        "output": 12,
+        "cachedInput": 0.2,
+        "tps": 120,
+        "ttftMs": 2500
+      },
+      { "provider": "google-vertex", "id": "gemini-3-pro-preview", "input": 2, "output": 12 },
+      {
+        "provider": "openrouter",
+        "id": "google/gemini-3-pro-preview",
+        "pricePerToken": { "input": "0.000002", "output": "0.000012" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 90.1,
+      "gpqa-diamond": 91.9,
+      "hle": 37.5,
+      "aime-2025": 95.0,
+      "swe-bench-verified": 76.2,
+      "livecodebench": 87.0,
+      "terminal-bench": 54.2,
+      "tau2-bench-retail": 85.3,
+      "mmmu": 87.0,
+      "mrcr-128k": 77.0,
+      "lmarena-text": 1501
+    }
+  },
+  {
+    "name": "Gemini 2.5 Pro",
+    "family": "Gemini 2.5",
+    "type": "text",
+    "released": "2025-06-17",
+    "knowledgeCutoff": "2025-01",
+    "context": 1048576,
+    "maxOutput": 65536,
+    "license": "Proprietary",
+    "input": ["text", "vision", "audio", "video", "pdf"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "Google's previous flagship thinking model with a 1M-token context. Prices shown are for prompts up to 200K tokens.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "gemini-2.5-pro",
+        "input": 1.25,
+        "output": 10,
+        "cachedInput": 0.31,
+        "tps": 140,
+        "ttftMs": 2000
+      },
+      { "provider": "google-vertex", "id": "gemini-2.5-pro", "input": 1.25, "output": 10 },
+      {
+        "provider": "openrouter",
+        "id": "google/gemini-2.5-pro",
+        "pricePerToken": { "input": "0.00000125", "output": "0.00001" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 86.2,
+      "gpqa-diamond": 86.4,
+      "hle": 21.6,
+      "aime-2025": 88.0,
+      "swe-bench-verified": 67.2,
+      "livecodebench": 69.0,
+      "tau2-bench-retail": 68.0,
+      "mmmu": 82.0,
+      "mrcr-128k": 58.0,
+      "lmarena-text": 1456
+    }
+  },
+  {
+    "name": "Gemini 2.5 Flash",
+    "family": "Gemini 2.5",
+    "type": "text",
+    "released": "2025-06-17",
+    "knowledgeCutoff": "2025-01",
+    "context": 1048576,
+    "maxOutput": 65536,
+    "license": "Proprietary",
+    "input": ["text", "vision", "audio", "video", "pdf"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching", "web_search"],
+    "description": "Google's price-performance workhorse, with controllable thinking.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "gemini-2.5-flash",
+        "input": 0.3,
+        "output": 2.5,
+        "cachedInput": 0.075,
+        "tps": 230,
+        "ttftMs": 700
+      },
+      { "provider": "google-vertex", "id": "gemini-2.5-flash", "input": 0.3, "output": 2.5 },
+      {
+        "provider": "openrouter",
+        "id": "google/gemini-2.5-flash",
+        "pricePerToken": { "input": "0.0000003", "output": "0.0000025" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 80.9,
+      "gpqa-diamond": 82.8,
+      "hle": 11.0,
+      "aime-2025": 72.0,
+      "swe-bench-verified": 60.4,
+      "livecodebench": 63.9,
+      "mmmu": 79.7,
+      "mrcr-128k": 54.3,
+      "lmarena-text": 1408
+    }
+  },
+  {
+    "name": "Gemini 2.5 Flash-Lite",
+    "family": "Gemini 2.5",
+    "type": "text",
+    "released": "2025-07-22",
+    "knowledgeCutoff": "2025-01",
+    "context": 1048576,
+    "maxOutput": 65536,
+    "license": "Proprietary",
+    "input": ["text", "vision", "audio", "video", "pdf"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "The fastest and cheapest Gemini 2.5 model, for high-volume, latency-sensitive work.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "gemini-2.5-flash-lite",
+        "input": 0.1,
+        "output": 0.4,
+        "cachedInput": 0.025,
+        "tps": 400,
+        "ttftMs": 400
+      },
+      { "provider": "google-vertex", "id": "gemini-2.5-flash-lite", "input": 0.1, "output": 0.4 },
+      {
+        "provider": "openrouter",
+        "id": "google/gemini-2.5-flash-lite",
+        "pricePerToken": { "input": "0.0000001", "output": "0.0000004" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 72.0,
+      "gpqa-diamond": 64.6,
+      "aime-2025": 49.8,
+      "livecodebench": 33.7,
+      "mmmu": 72.9,
+      "mrcr-128k": 16.6
+    }
+  },
+  {
+    "name": "Gemini 2.0 Flash",
+    "family": "Gemini 2.0",
+    "type": "text",
+    "status": "deprecated",
+    "released": "2025-02-05",
+    "knowledgeCutoff": "2024-08",
+    "context": 1048576,
+    "maxOutput": 8192,
+    "license": "Proprietary",
+    "input": ["text", "vision", "audio", "video", "pdf"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "web_search"],
+    "description": "The previous-generation Flash model. Superseded by Gemini 2.5 Flash and Flash-Lite.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "gemini-2.0-flash",
+        "input": 0.1,
+        "output": 0.4,
+        "cachedInput": 0.025
+      },
+      { "provider": "google-vertex", "id": "gemini-2.0-flash-001", "input": 0.15, "output": 0.6 }
+    ],
+    "scores": {
+      "mmlu-pro": 77.6,
+      "gpqa-diamond": 60.1,
+      "math-500": 90.9,
+      "livecodebench": 34.5,
+      "mmmu": 71.7,
+      "lmarena-text": 1360
+    }
+  },
+  {
+    "name": "Gemma 3 27B",
+    "family": "Gemma 3",
+    "type": "text",
+    "released": "2025-03-12",
+    "knowledgeCutoff": "2024-08",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 27,
+    "openWeights": true,
+    "license": "Gemma Terms of Use",
+    "input": ["text", "vision"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Google's largest Gemma 3 open model; runs on a single GPU.",
+    "offerings": [
+      { "provider": "google-ai-studio", "id": "gemma-3-27b-it", "input": 0, "output": 0 },
+      { "provider": "deepinfra", "id": "google/gemma-3-27b-it", "input": 0.09, "output": 0.17 },
+      { "provider": "together", "id": "google/gemma-3-27b-it", "input": 0.2, "output": 0.2 },
+      {
+        "provider": "openrouter",
+        "id": "google/gemma-3-27b-it",
+        "pricePerToken": { "input": "0.00000009", "output": "0.00000017" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 67.5,
+      "gpqa-diamond": 42.4,
+      "math-500": 89.0,
+      "livecodebench": 29.7,
+      "mmmu": 64.9,
+      "lmarena-text": 1340
+    }
+  },
+  {
+    "name": "Gemini Embedding",
+    "family": "Gemini Embedding",
+    "type": "embedding",
+    "released": "2025-07-14",
+    "context": 2048,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "Google's multilingual text embedding model, with flexible output dimensions up to 3,072.",
+    "offerings": [
+      { "provider": "google-ai-studio", "id": "gemini-embedding-001", "input": 0.15 },
+      { "provider": "google-vertex", "id": "gemini-embedding-001", "input": 0.15 }
+    ]
+  },
+  {
+    "name": "Imagen 4",
+    "family": "Imagen",
+    "type": "image",
+    "released": "2025-05-20",
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["image"],
+    "capabilities": [],
+    "description": "Google's text-to-image model, with improved typography and fine detail.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "imagen-4.0-generate-001",
+        "unit": "image",
+        "price": 0.04
+      },
+      {
+        "provider": "google-vertex",
+        "id": "imagen-4.0-generate-001",
+        "unit": "image",
+        "price": 0.04
+      }
+    ]
+  },
+  {
+    "name": "Veo 3",
+    "family": "Veo",
+    "type": "video",
+    "released": "2025-05-20",
+    "license": "Proprietary",
+    "input": ["text", "image"],
+    "output": ["video", "audio"],
+    "capabilities": [],
+    "description": "Text-to-video with natively generated sound. Published per second of video; stored per minute.",
+    "offerings": [
+      {
+        "provider": "google-ai-studio",
+        "id": "veo-3.0-generate-001",
+        "unit": "second",
+        "price": 0.75
+      },
+      { "provider": "google-vertex", "id": "veo-3.0-generate-001", "unit": "second", "price": 0.75 }
+    ]
+  }
+]

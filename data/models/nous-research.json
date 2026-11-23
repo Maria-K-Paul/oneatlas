@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Hermes 3 70B",
+    "family": "Hermes",
+    "type": "text",
+    "released": "2024-08-15",
+    "context": 131072,
+    "maxOutput": 8192,
+    "params": 70,
+    "openWeights": true,
+    "license": "Llama 3.1 Community License",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json"],
+    "description": "Community fine-tune of Llama 3.1 70B focused on steerability, role-play and function calling.",
+    "offerings": [
+      {
+        "provider": "deepinfra",
+        "id": "NousResearch/Hermes-3-Llama-3.1-70B",
+        "input": 0.3,
+        "output": 0.3
+      },
+      {
+        "provider": "openrouter",
+        "id": "nousresearch/hermes-3-llama-3.1-70b",
+        "pricePerToken": { "input": "0.0000003", "output": "0.0000003" }
+      }
+    ],
+    "scores": { "mmlu-pro": 54.0, "gpqa-diamond": 40.0, "math-500": 60.0 }
+  }
+]

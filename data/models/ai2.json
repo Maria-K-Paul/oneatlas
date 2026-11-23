@@ -1,0 +1,20 @@
+[
+  {
+    "name": "OLMo 2 32B Instruct",
+    "slug": "olmo-2-32b-instruct",
+    "family": "OLMo 2",
+    "type": "text",
+    "released": "2025-03-13",
+    "context": 4096,
+    "maxOutput": 4096,
+    "params": 32,
+    "openWeights": true,
+    "license": "Apache 2.0",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["fine_tuning"],
+    "description": "Fully open model: weights, training data and code are all public. Not offered by any hosted provider in this dataset; self-host only.",
+    "offerings": [],
+    "scores": { "mmlu-pro": 54.0, "gpqa-diamond": 36.0, "math-500": 55.0 }
+  }
+]

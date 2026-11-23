@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Nova Premier",
+    "family": "Nova",
+    "type": "text",
+    "released": "2025-04-30",
+    "context": 1000000,
+    "maxOutput": 32000,
+    "license": "Proprietary",
+    "input": ["text", "vision", "video"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching"],
+    "description": "Amazon's most capable Nova model, also used as a teacher for distilling smaller models.",
+    "offerings": [
+      {
+        "provider": "aws-bedrock",
+        "id": "amazon.nova-premier-v1:0",
+        "pricePer1K": { "input": 0.0025, "output": 0.0125 }
+      }
+    ],
+    "scores": { "mmlu-pro": 78.0, "gpqa-diamond": 64.0, "math-500": 85.0, "mmmu": 70.0 }
+  },
+  {
+    "name": "Nova Pro",
+    "family": "Nova",
+    "type": "text",
+    "released": "2024-12-03",
+    "context": 300000,
+    "maxOutput": 10000,
+    "license": "Proprietary",
+    "input": ["text", "vision", "video"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "Balanced multimodal Nova model for documents, video and agent workflows.",
+    "offerings": [
+      {
+        "provider": "aws-bedrock",
+        "id": "amazon.nova-pro-v1:0",
+        "pricePer1K": { "input": 0.0008, "output": 0.0032, "cachedInput": 0.0002 }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 69.0,
+      "gpqa-diamond": 46.9,
+      "math-500": 76.6,
+      "mmmu": 61.7,
+      "lmarena-text": 1290
+    }
+  },
+  {
+    "name": "Nova Lite",
+    "family": "Nova",
+    "type": "text",
+    "released": "2024-12-03",
+    "context": 300000,
+    "maxOutput": 10000,
+    "license": "Proprietary",
+    "input": ["text", "vision", "video"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "Very low-cost multimodal model for fast processing of images, video and text.",
+    "offerings": [
+      {
+        "provider": "aws-bedrock",
+        "id": "amazon.nova-lite-v1:0",
+        "pricePer1K": { "input": 0.00006, "output": 0.00024 }
+      }
+    ],
+    "scores": { "mmlu-pro": 59.0, "gpqa-diamond": 42.0, "math-500": 73.3, "mmmu": 56.2 }
+  },
+  {
+    "name": "Nova Micro",
+    "family": "Nova",
+    "type": "text",
+    "released": "2024-12-03",
+    "context": "128K",
+    "maxOutput": 10000,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "caching", "fine_tuning"],
+    "description": "Text-only Nova with the lowest latency and cost in the family.",
+    "offerings": [
+      {
+        "provider": "aws-bedrock",
+        "id": "amazon.nova-micro-v1:0",
+        "pricePer1K": { "input": 0.000035, "output": 0.00014 }
+      }
+    ],
+    "scores": { "mmlu-pro": 53.0, "gpqa-diamond": 40.0, "math-500": 69.3 }
+  },
+  {
+    "name": "Titan Text Embeddings V2",
+    "family": "Titan",
+    "type": "embedding",
+    "released": "2024-04-30",
+    "context": 8192,
+    "license": "Proprietary",
+    "input": ["text"],
+    "output": [],
+    "capabilities": [],
+    "description": "Amazon's text embedding model with selectable 256, 512 or 1,024 dimensions.",
+    "offerings": [
+      {
+        "provider": "aws-bedrock",
+        "id": "amazon.titan-embed-text-v2:0",
+        "pricePer1K": { "input": 0.00002 }
+      }
+    ]
+  }
+]

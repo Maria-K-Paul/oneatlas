@@ -1,0 +1,87 @@
+[
+  {
+    "name": "GLM-4.6",
+    "family": "GLM-4",
+    "type": "text",
+    "released": "2025-09-30",
+    "context": 200000,
+    "maxOutput": 128000,
+    "params": 355,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning", "caching"],
+    "description": "Open mixture of experts (32B active) with a 200K context and strong agentic coding.",
+    "offerings": [
+      {
+        "provider": "zhipu-api",
+        "id": "glm-4.6",
+        "input": 0.6,
+        "output": 2.2,
+        "cachedInput": 0.11
+      },
+      { "provider": "deepinfra", "id": "zai-org/GLM-4.6", "input": 0.6, "output": 1.9 },
+      { "provider": "together", "id": "zai-org/GLM-4.6", "input": 0.6, "output": 2.2 },
+      {
+        "provider": "openrouter",
+        "id": "z-ai/glm-4.6",
+        "pricePerToken": { "input": "0.0000006", "output": "0.0000019" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 83.0,
+      "gpqa-diamond": 81.0,
+      "hle": 17.2,
+      "aime-2025": 93.9,
+      "swe-bench-verified": 68.0,
+      "livecodebench": 82.8,
+      "terminal-bench": 40.5,
+      "tau2-bench-retail": 75.9,
+      "lmarena-text": 1426
+    }
+  },
+  {
+    "name": "GLM-4.5 Air",
+    "family": "GLM-4",
+    "type": "text",
+    "released": "2025-07-28",
+    "context": 131072,
+    "maxOutput": 98304,
+    "params": 106,
+    "openWeights": true,
+    "license": "MIT",
+    "input": ["text"],
+    "output": ["text"],
+    "capabilities": ["tools", "json", "reasoning"],
+    "description": "Compact GLM-4.5 (12B active) with hybrid thinking.",
+    "offerings": [
+      {
+        "provider": "zhipu-api",
+        "id": "glm-4.5-air",
+        "input": 0.2,
+        "output": 1.1,
+        "cachedInput": 0.03
+      },
+      {
+        "provider": "together",
+        "id": "zai-org/GLM-4.5-Air-FP8",
+        "input": 0.2,
+        "output": 1.1,
+        "quantization": "fp8"
+      },
+      {
+        "provider": "openrouter",
+        "id": "z-ai/glm-4.5-air",
+        "pricePerToken": { "input": "0.0000002", "output": "0.0000011" }
+      }
+    ],
+    "scores": {
+      "mmlu-pro": 81.4,
+      "gpqa-diamond": 75.0,
+      "aime-2025": 79.4,
+      "swe-bench-verified": 57.6,
+      "livecodebench": 70.7
+    }
+  }
+]
