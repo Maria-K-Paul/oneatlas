@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OneAtlas database schema</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@500;600&display=swap">
+<style>
+  /* Fixed 1920×1080 canvas, rendered to PNG with headless Chrome at 2x scale. ERD on the left, notes on the right. */
+  :root {
+    --bg: #f6f8f8; --surface: #ffffff; --ink: #0f1a1c; --muted: #55666a; --line: #d3dddf;
+    --accent: #0e7c74; --accent-soft: #e3f3f1; --data: #a05a12;
+    --display: "Space Grotesk", "Segoe UI", sans-serif; --body: "Inter", "Segoe UI", sans-serif;
+    --mono: "JetBrains Mono", Consolas, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 1920px; height: 1080px; background: var(--bg); }
+  body { font: 17px/1.45 var(--body); color: var(--ink); padding: 52px 64px 48px; display: flex; flex-direction: column; gap: 24px; }
+  header { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; }
+  .eyebrow { font: 500 14px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 600 44px/1.1 var(--display); margin: 10px 0 0; letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: 18px; max-width: 760px; text-align: right; }
+  .main { flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 400px; gap: 32px; }
+  #erd { background: var(--surface); border: 1.5px solid var(--line); border-radius: 16px; padding: 18px; min-height: 0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #erd svg { width: 100% !important; height: 100% !important; max-width: none !important; }
+  aside { display: flex; flex-direction: column; gap: 22px; }
+  .fact { border-top: 3px solid var(--accent); padding-top: 12px; }
+  .fact.d { border-top-color: var(--data); }
+  .fact b { display: block; font: 600 19px/1.25 var(--display); }
+  .fact span { display: block; color: var(--muted); font-size: 15.5px; margin-top: 4px; }
+  code { font: 500 14px/1.4 var(--mono); color: var(--ink); }
+  .legend { margin-top: auto; display: grid; gap: 6px; font-size: 15px; color: var(--muted); background: var(--surface); border: 1.5px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+</style>
+</head>
+<body>
+  <header>
+    <div>
+      <div class="eyebrow">OneAtlas · PostgreSQL + Prisma</div>
+      <h1>Database schema</h1>
+    </div>
+    <p class="sub">7 tables. A lab creates models, providers serve them, and each provider's price lives on the model–provider pair.</p>
+  </header>
+
+  <div class="main">
+    <div id="erd"></div>
+    <aside>
+      <div class="fact"><b>Lab ≠ Provider</b><span>Meta makes Llama; Groq, Together and Bedrock serve it. <code>ModelOffering</code> holds each provider's price.</span></div>
+      <div class="fact"><b>Public ids are slugs</b><span><code>anthropic/claude-opus-4-5</code>, unique per lab, like Hugging Face and OpenRouter.</span></div>
+      <div class="fact"><b>Indexed for every filter</b><span>GIN on capability and modality arrays, trigram on names, B-tree on price, context and release date.</span></div>
+      <div class="fact d"><b>Checked twice</b><span>Zod rejects bad data at ingestion; Postgres CHECK constraints block negative prices and bad slugs anyway.</span></div>
+      <div class="legend">
+        <div><code>PK</code> primary key · <code>UK</code> unique · <code>FK</code> foreign key</div>
+        <div><code>derived</code> recomputed from offerings by ingestion</div>
+        <div>Prices are <code>DECIMAL(10,4)</code> USD per unit</div>
+      </div>
+    </aside>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.min.js"></script>
+<script>
+  const source = `erDiagram
+  Lab ||--o{ Model : creates
+  Lab |o--o{ Provider : "runs own API"
+  Model ||--o{ ModelOffering : "offered as"
+  Provider ||--o{ ModelOffering : serves
+  Model ||--o{ BenchmarkScore : "scored on"
+  Benchmark ||--o{ BenchmarkScore : records
+  Lab {
+    string id PK
+    string slug UK
+    string name
+    enum kind
+    string headquarters
+  }
+  Provider {
+    string id PK
+    string slug UK
+    string name
+    enum kind
+    string labId FK "nullable"
+  }
+  Model {
+    string id PK
+    string labId FK
+    string slug "unique per lab"
+    string name
+    enum type
+    enum status
+    date releaseDate
+    int contextWindow
+    enum_list capabilities
+    bool openWeights
+    decimal blendedPrice "derived"
+    int providerCount "derived"
+  }
+  ModelOffering {
+    string id PK
+    string modelId FK
+    string providerId FK
+    enum pricingUnit
+    decimal inputPrice
+    decimal outputPrice
+    decimal cachedInputPrice
+  }
+  Benchmark {
+    string id PK
+    string slug UK
+    string name
+    enum category
+    enum unit
+  }
+  BenchmarkScore {
+    string id PK
+    string modelId FK
+    string benchmarkId FK
+    float score
+  }
+  IngestionRun {
+    string id PK
+    string source
+    enum status
+    json stats
+  }`;
+  mermaid.initialize({
+    startOnLoad: false,
+    theme: "base",
+    fontFamily: "Inter, Segoe UI, sans-serif",
+    themeVariables: {
+      fontFamily: "Inter, Segoe UI, sans-serif",
+      fontSize: "17px",
+      primaryColor: "#e3f3f1",
+      primaryTextColor: "#0f1a1c",
+      primaryBorderColor: "#0e7c74",
+      lineColor: "#55666a",
+      textColor: "#0f1a1c",
+      attributeBackgroundColorOdd: "#ffffff",
+      attributeBackgroundColorEven: "#f3f7f7",
+    },
+    er: { useMaxWidth: true },
+  });
+  document.fonts.ready.then(() => mermaid.render("erd-svg", source)).then(({ svg }) => {
+    document.getElementById("erd").innerHTML = svg;
+    document.body.dataset.ready = "true";
+  });
+</script>
+</body>
+</html>

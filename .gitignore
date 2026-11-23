@@ -48,3 +48,9 @@ next-env.d.ts
 
 # local tooling
 /.claude/
+
+# personal recording notes (not part of the submission)
+/LOOM_SCRIPT.md
+
+.vercel
+.env*
